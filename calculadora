@@ -1,0 +1,138 @@
+//https://github.com/LuisFRCampos/Calculadora-/new/main//
+//Nome de usuário no GitHub: LuisFRCampos//
+//Nesse programa foi desenvolvido uma calculadora com seus respectivos cálculos de soma, multiplicação, divisão, radiciação, potenciação e subtração.//
+//Nele aparece um menu com as opções e é solicitado ao usuário qual operação ele deseja realizar.//
+//Em seguida é solicitado ao usuário que digite o primeiro valor e logo após o segundo.//
+//No caso da radiciação, é solicitado apenas um número ao usuário.//
+//Após ser inserido todos os valores a serem calculados, o resultado é mostrado na tela.//
+#include <stdio.h> //Para incluir a biblioteca padrão da linguagem c para entrada e saída de dados//
+#include <locale.h> //Para incluir a biblioteca de português, vai garantir a pontuação e acentuação//
+#include <math.h> //Para incluir a biblioteca de operações matemáticas.//
+#include <stdlib.h> //Para incluir a biblioteca de memória.//
+
+int main(void){
+	setlocale (LC_ALL, "Portuguese"); //Aqui configura o português para a acentuação ficar certinha.//
+	
+	int num1, num2; //Das linhas 14 a 18 é uma declaração de variável do tipo inteiro pois só estamos trabalhando com números reais.//
+	int opcao;
+	int soma1, multiplicacao2, potenciacao5, subtracao6;
+	int radiciacao, num;
+	int pote, elevado;
+	
+	float divisao3, numero1, numero2; // Aqui é uma declaração de uma variável do tipo float para usar a vírgula.//
+	
+	printf("Calculadora do Luis Fernando Ribeiro de Campos do curso de análise e desenvolvimento de sistemas\r\nfaculdade La Salle, matrícula: 202222243.\n");
+	printf("\n1-Soma \n"); //Das linhas 23 a 29 é o menu para escolha da operação.//
+	printf("2-Multiplicação: \n");
+	printf("3-Divisão: \n");
+	printf("4-Radiciação: \n"); //Esse código "\n" é para quebrar/pular uma linha para ficar esteticamente mais bonito na tela de apresentação para o usuário.//
+	printf("5-Potenciação: \n");
+	printf("6-Subtração: \n");
+	printf("Digite o número referente a sua operação:");
+	scanf("%i", &opcao); //Aqui o programa ele vai ler a informação inserida pelo usuário e vai guardá-la na variável opcao.//
+	
+
+	switch(opcao){ //Aqui é um laço onde dá as opções pro sistema, se o usuário colocar a opção de 1 a 6, define o que o sistema tem que fazer em cada caso.//
+		case 1: //Aqui é o que o sistema vai fazer se o usuário quiser a opção 1-Soma.//
+		printf("Digite o primeiro valor: "); //Aqui é pedido para o usuário digitar o primeiro valor da operação.//
+		scanf("%i", &num1); //Aqui o primeiro valor é guardado na variável &num1 //
+			
+		printf("Digite o segundo valor: "); //Aqui é pedido para o usuário digitar o segundo valor da operação.//
+		scanf("%i", &num2); //Aqui o segundo valor é guardado na variável &num2 //
+			
+		soma1=num1+num2; //Aqui temos os valores que foram guardados nas variáveis num1 e num2 sendo somados e sendo inseridos na variável soma1.//
+		printf("O resultado da sua soma é: %i", soma1); //Aqui vai mostrar na tela do usuário o resultado da soma dos dois valores que foram inseridos por ele.//
+		
+		break; //Aqui é a pausa do case 1. Aqui é definido que já acabou o conteúdo do case 1.//
+		
+		case 2:
+		printf("Digite o primeiro valor: ");
+		scanf("%i", &num1); //usei o %i pois a minha variavel e int com numeros inteiros//
+			
+		printf("Digite o segundo valor: ");
+		scanf("%i", &num2);
+			
+		multiplicacao2=num1*num2;
+		printf("O resultado da sua multiplicação é: %i", multiplicacao2);
+		
+		break;
+		
+		case 3:
+		printf("Digite o primeiro valor: ");
+		scanf("%f", &numero1);
+	
+					
+		printf("Digite o segundo valor: ");
+		scanf("%f", &numero2);
+			if(numero2<=0){     //Aqui usei o "if" pois foi a unica solucao que achei para que não divida o numero 0(zero) pois não a divisor.//
+				printf("Erro!");
+			}else{  //aqui o "else" e para se caso o número2 não for 0(zero) o codigo de divisão e executado normalmente.// 
+			
+		divisao3=numero1/numero2;
+		printf("O resultado da sua divisão é: %.1f", divisao3); //aqui usei a %f pois e uma variavel do tipo FLOAT que são para numeros com virgulas e coloqui %.1f pois quero apenas 1 número depois da virgula// 
+
+	}
+		break;
+	
+		case 4:
+		printf("Digite um número: ");//Para fazerr a raiz quadrada nao precisei usar 2 numeros entao fiz uma nova varivel com apenas um numero//
+		scanf("%i", &num);
+		
+		radiciacao=sqrt(num);
+		printf("A raiz quadrada de %i é: %i", num ,radiciacao);
+	
+		break;
+			
+		case 5:
+		printf("Digite o número: ");
+		scanf("%i", &pote);
+		
+		printf("Elevado a: ");
+		scanf("%i", &elevado);
+		
+		potenciacao5= pow(pote,elevado);
+		printf("O resultado da sua potência é: %d", potenciacao5);
+		
+		break;
+		
+		case 6:
+		printf("Digite o primeiro valor: ");
+		scanf("%i", &num1);
+			
+		printf("Digite o segundo valor: ");
+		scanf("%i", &num2);
+			
+		subtracao6=num1-num2;
+		printf("O resultado da sua subtração é: %i", subtracao6);
+		
+		break;
+		//aqui é se caso o usuário da calculadora colocar algum número que não seja 1, 2, 3, 4, 5, e 6 retorne a mensagem erro e como não sabia resolver com todos os números fiz com o switch//
+		case 0:
+		printf("Erro!");
+		
+		break;
+			case 7:
+		printf("Erro!");
+		
+		break;
+		case 8:
+		printf("Erro!");
+		
+		break;
+		case 9:
+		printf("Erro!");
+		
+		break;
+			case 10:
+		printf("Erro!");
+		
+		break;
+		}	
+		
+											//Referencias que usei de base para o meu codigo.//
+											
+											//https://www.youtube.com/watch?v=vwHnp0BjVkQ//
+											//https://www.youtube.com/watch?v=lXEmwLW8Yuw//
+											//https://www.youtube.com/watch?v=e0mrZQ_sdBI//
+											//https://www.youtube.com/watch?v=Bnz5dNnVwc0//
+														//ebok algoritimo//
